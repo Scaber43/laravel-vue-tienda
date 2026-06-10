@@ -1,0 +1,69 @@
+[90m= [39m[34;4mIlluminate\Database\Eloquent\Collection[39;24m {#8684
+    [34mall[39m: [
+      [34;4mApp\Models\Producto[39;24m {#8697
+        [34mid[39m: [35m1[39m,
+        [34mnombre[39m: [32m"[39m[32mAudífonos Bluetooth[39m[32m"[39m,
+        [34mstock[39m: [35m-18[39m,
+      },
+      [34;4mApp\Models\Producto[39;24m {#8698
+        [34mid[39m: [35m2[39m,
+        [34mnombre[39m: [32m"[39m[32mMouse Gamer[39m[32m"[39m,
+        [34mstock[39m: [35m0[39m,
+      },
+      [34;4mApp\Models\Producto[39;24m {#8695
+        [34mid[39m: [35m3[39m,
+        [34mnombre[39m: [32m"[39m[32mTeclado Mecánico[39m[32m"[39m,
+        [34mstock[39m: [35m0[39m,
+      },
+      [34;4mApp\Models\Producto[39;24m {#8694
+        [34mid[39m: [35m4[39m,
+        [34mnombre[39m: [32m"[39m[32mPlayera Básica[39m[32m"[39m,
+        [34mstock[39m: [35m0[39m,
+      },
+      [34;4mApp\Models\Producto[39;24m {#8693
+        [34mid[39m: [35m5[39m,
+        [34mnombre[39m: [32m"[39m[32mSudadera[39m[32m"[39m,
+        [34mstock[39m: [35m0[39m,
+      },
+      [34;4mApp\Models\Producto[39;24m {#8692
+        [34mid[39m: [35m6[39m,
+        [34mnombre[39m: [32m"[39m[32mPantalón Jeans[39m[32m"[39m,
+        [34mstock[39m: [35m0[39m,
+      },
+      [34;4mApp\Models\Producto[39;24m {#8691
+        [34mid[39m: [35m7[39m,
+        [34mnombre[39m: [32m"[39m[32mLicuadora[39m[32m"[39m,
+        [34mstock[39m: [35m0[39m,
+      },
+      [34;4mApp\Models\Producto[39;24m {#8690
+        [34mid[39m: [35m8[39m,
+        [34mnombre[39m: [32m"[39m[32mTostador[39m[32m"[39m,
+        [34mstock[39m: [35m0[39m,
+      },
+      [34;4mApp\Models\Producto[39;24m {#8689
+        [34mid[39m: [35m9[39m,
+        [34mnombre[39m: [32m"[39m[32mSartén Antiadherente[39m[32m"[39m,
+        [34mstock[39m: [35m0[39m,
+      },
+      [34;4mApp\Models\Producto[39;24m {#8688
+        [34mid[39m: [35m10[39m,
+        [34mnombre[39m: [32m"[39m[32mBalón de Fútbol[39m[32m"[39m,
+        [34mstock[39m: [35m0[39m,
+      },
+      [34;4mApp\Models\Producto[39;24m {#8687
+        [34mid[39m: [35m11[39m,
+        [34mnombre[39m: [32m"[39m[32mTenis Running[39m[32m"[39m,
+        [34mstock[39m: [35m0[39m,
+      },
+      [34;4mApp\Models\Producto[39;24m {#8686
+        [34mid[39m: [35m12[39m,
+        [34mnombre[39m: [32m"[39m[32mRaqueta de Tenis[39m[32m"[39m,
+        [34mstock[39m: [35m0[39m,
+      },
+      [34;4mApp\Models\Producto[39;24m {#8685
+        [34mid[39m: [35m13[39m,
+        [34mnombre[39m: [32m"[39m[32mcoca cola[39m[32m"[39m,
+        [34mstock[39m: [35m2[39m,
+      },
+    ],
+  }

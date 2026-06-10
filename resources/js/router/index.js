@@ -1,17 +1,22 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import CatalogoView from '../views/CatalogoView.vue'
-import ProductoCreateView from '../views/ProductoCreateView.vue'
-
 const routes = [
     {
         path: '/',
-        component: CatalogoView
+        component: () => import('../views/CatalogoView.vue')
     },
     {
         path: '/productos/create',
-        component: ProductoCreateView
-    }
+        component: () => import('../views/ProductoCreateView.vue')
+    },
+    {
+        path: '/carrito',
+        component: () => import('../views/CarritoView.vue')
+    },
+    {
+        path: '/pedido/:id',
+        component: () => import('../views/PedidoConfirmacionView.vue')
+    },
 ]
 
 export default createRouter({

@@ -4,59 +4,57 @@ namespace App\Http\Controllers;
 
 use App\Models\Categoria;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use App\Http\Resources\CategoriaResource;
 use App\Http\Resources\ProductoResource;
-class CategoriaController extends Controller
 
+class CategoriaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return CategoriaResource::collection(
-            Categoria::with('productos')->get()
-        );
+        $categorias = Cache::remember('categorias.todas', 3600, function () {
+            return CategoriaResource::collection(
+                Categoria::with('productos')->get()
+            )->toArray(request());
+        });
+
+        return response()->json(['data' => $categorias]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $cat = Categoria::create($request->validate([
+            'nombre' => 'required|string|max:255',
+        ]));
+        Cache::forget('categorias.todas');
+        return new CategoriaResource($cat);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Categoria $categoria)
     {
-        //
+        return new CategoriaResource($categoria);
     }
 
     public function productos(Categoria $categoria)
-{
-    return ProductoResource::collection(
-        $categoria->productos()
-                  ->with('categoria')
-                  ->get()
-    );
-}
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Categoria $categoria)
     {
-        //
+        return ProductoResource::collection(
+            $categoria->productos()->with('categoria')->get()
+        );
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    public function update(Request $request, Categoria $categoria)
+    {
+        $categoria->update($request->validate([
+            'nombre' => 'required|string|max:255',
+        ]));
+        Cache::forget('categorias.todas');
+        return new CategoriaResource($categoria);
+    }
+
     public function destroy(Categoria $categoria)
     {
-        //
+        $categoria->delete();
+        Cache::forget('categorias.todas');
+        return response()->json(['message' => 'Categoría eliminada']);
     }
 }

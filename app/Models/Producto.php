@@ -18,13 +18,16 @@ class Producto extends Model
         'categoria_id'
     ];
 
-    // RELACIÓN
     public function categoria()
     {
         return $this->belongsTo(Categoria::class);
     }
 
-    // 🔎 BUSCAR
+    public function pedidoItems()
+    {
+        return $this->hasMany(PedidoItem::class);
+    }
+
     public function scopeBuscar($query, $termino)
     {
         return $query->when($termino, function ($q) use ($termino) {
@@ -33,7 +36,6 @@ class Producto extends Model
         });
     }
 
-    // 📂 CATEGORÍA
     public function scopeDeCategoria($query, $categoriaId)
     {
         return $query->when($categoriaId, function ($q) use ($categoriaId) {
@@ -41,7 +43,6 @@ class Producto extends Model
         });
     }
 
-    // 💲 PRECIO
     public function scopeRangoPrecio($query, $min, $max)
     {
         return $query
